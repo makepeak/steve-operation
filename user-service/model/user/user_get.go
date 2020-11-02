@@ -1,7 +1,7 @@
 package user
 
 import (
-	"github.com/makepeak/steve-operation/user-service/basic/db"
+	"github.com/makepeak/steve-operation/basic/db"
 	proto "github.com/makepeak/steve-operation/user-service/proto/user"
 	log "github.com/micro/go-micro/v2/logger"
 )

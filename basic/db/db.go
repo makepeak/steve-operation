@@ -5,7 +5,7 @@ import (
 	"fmt"
 	"sync"
 
-	"github.com/makepeak/steve-operation/user-service/basic/config"
+	"github.com/makepeak/steve-operation/basic/config"
 	log "github.com/micro/go-micro/v2/logger"
 )
 

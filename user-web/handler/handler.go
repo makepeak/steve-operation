@@ -6,7 +6,7 @@ import (
 	"net/http"
 	"time"
 
-	us "github.com/makepeak/user-service/proto/user"
+	us "github.com/makepeak/steve-operation/user-service/proto/user"
 	"github.com/micro/go-micro/v2/client"
 	log "github.com/micro/go-micro/v2/logger"
 )
@@ -21,7 +21,7 @@ type Error struct {
 	Detail string `json:"detail"`
 }
 
-func Init() {
+func init() {
 	serviceClient = us.NewUserService("mu.micro.book.service.user", client.DefaultClient)
 }
 

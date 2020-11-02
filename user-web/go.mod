@@ -8,6 +8,7 @@ replace google.golang.org/grpc => google.golang.org/grpc v1.26.0
 
 require (
 	github.com/makepeak/steve-operation/user-service v0.0.0-20201102085203-45070b885e92
-	github.com/micro-in-cn/tutorials/microservice-in-micro v0.0.0-20201009111623-6942a78f3f99
+	github.com/micro/go-micro v1.18.0
 	github.com/micro/go-micro/v2 v2.9.1
+	github.com/micro/go-plugins/registry/consul/v2 v2.9.1
 )
