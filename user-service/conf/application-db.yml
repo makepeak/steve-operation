@@ -1,0 +1,8 @@
+app:
+  mysql:
+    enabled: true
+    url: root:73428999jjfJJF@(172.16.32.15:3306)/steve_book_mall?charset=utf8&parseTime=true&loc=Asia%2FShanghai
+    maxIdleConnection: 100
+    maxOpenConnection: 130
+    connMaxLifetime: 100
+
