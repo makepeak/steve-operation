@@ -3,8 +3,8 @@ package handler
 import (
 	"context"
 
-	us "github.com/makepeak/steve-operation/model/user"
-	s "github.com/makepeak/steve-operation/proto/user"
+	us "github.com/makepeak/steve-operation/user-service/model/user"
+	s "github.com/makepeak/steve-operation/user-service/proto/user"
 	log "github.com/micro/go-micro/v2/logger"
 )
 

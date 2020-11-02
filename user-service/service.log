@@ -1,0 +1,10 @@
+nohup: ignoring input
+2020-11-02 20:50:24  file=config/config.go:58 level=info [Init] Load config file：path: /data/project/src/steve-operation/user-service/conf/application.yml, {Include:consul, db}
+
+2020-11-02 20:50:24  file=config/config.go:68 level=info [Init] Load config filePath: /data/project/src/steve-operation/user-service/conf/application-consul.yml
+
+2020-11-02 20:50:24  file=config/config.go:68 level=info [Init] Load config filePath: /data/project/src/steve-operation/user-service/conf/application-db.yml
+
+2020-11-02 20:50:24  file=v2@v2.9.1/service.go:200 level=info Starting [service] mu.micro.book.service.user
+2020-11-02 20:50:24  file=grpc/grpc.go:864 level=info Server [grpc] Listening on [::]:39050
+2020-11-02 20:50:24  file=grpc/grpc.go:697 level=info Registry [consul] Registering node: mu.micro.book.service.user-3e757128-5b93-4a81-abc1-45c796dc9f5f
