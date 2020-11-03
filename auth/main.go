@@ -3,9 +3,9 @@ package main
 import (
 	"fmt"
 
-	"github.com/makepeak/steve-operation/auth/handler"
-	"github.com/makepeak/steve-operation/auth/model"
-	s "github.com/makepeak/steve-operation/auth/proto/auth"
+	// "github.com/makepeak/steve-operation/auth/handler"
+	// "github.com/makepeak/steve-operation/auth/model"
+	// s "github.com/makepeak/steve-operation/auth/proto/auth"
 	"github.com/makepeak/steve-operation/basic"
 	"github.com/makepeak/steve-operation/basic/common"
 	"github.com/makepeak/steve-operation/basic/config"

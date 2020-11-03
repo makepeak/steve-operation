@@ -1,5 +1,4 @@
-
-}ckage common
+package common
 
 import "strconv"
 
