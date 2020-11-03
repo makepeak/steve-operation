@@ -5,7 +5,6 @@ import (
 	"time"
 
 	"github.com/dgrijalva/jwt-go"
-	"github.com/makepeak/steve-operation/basic/config"
 )
 
 // createTokenClaims Claims

@@ -5,13 +5,18 @@ import (
 	"sync"
 
 	r "github.com/go-redis/redis"
-	"github.com/makepeak/steve-operation/basic/redis"
+	// "github.com/makepeak/steve-operation/basic/redis"
+	"github.com/makepeak/steve-operation/basic/config"
+	"github.com/makepeak/steve-operation/plugins/jwt"
+	"github.com/makepeak/steve-operation/plugins/redis"
+	"github.com/micro/go-micro/util/log"
 )
 
 var (
 	s  *service
 	ca *r.Client
 	m  sync.RWMutex
+	cfg = &jwt.Jwt{}
 )
 
 // service 服务
@@ -47,7 +52,14 @@ func Init() {
 		return
 	}
 
-	ca = redis.GetRedis()
+	err := config.C().App("jwt", cfg)
+	if err != nil {
+		panic(err)
+	}
+
+	log.Logf("[initCfg] 配置，cfg：%v", cfg)
+
+	ca = redis.Redis()
 
 	s = &service{}
 }
