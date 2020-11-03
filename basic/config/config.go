@@ -53,7 +53,7 @@ func (c *configurator) init(ops Options) (err error) {
 		return
 	}
 
-	c.conf = config.NewConfig()
+	c.conf, _ = config.NewConfig()
 
 	// 加载配置
 	err = c.conf.Load(ops.Sources...)
