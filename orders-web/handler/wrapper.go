@@ -7,7 +7,7 @@ import (
 	auth "github.com/makepeak/steve-operation/auth/proto/auth"
 	"github.com/makepeak/steve-operation/basic/common"
 	"github.com/makepeak/steve-operation/plugins/session"
-	"github.com/micro/go-micro/util/log"
+	"github.com/micro/go-micro/v2/util/log"
 )
 
 // AuthWrapper 认证wrapper

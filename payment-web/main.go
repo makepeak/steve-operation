@@ -12,11 +12,11 @@ import (
 	tracer "github.com/makepeak/steve-operation/plugins/tracer/jaeger"
 	"github.com/makepeak/steve-operation/plugins/tracer/opentracing/std2micro"
 	"github.com/micro/cli"
-	"github.com/micro/go-micro/registry"
-	"github.com/micro/go-micro/registry/etcd"
-	"github.com/micro/go-micro/util/log"
-	"github.com/micro/go-micro/web"
-	"github.com/micro/go-plugins/config/source/grpc"
+	"github.com/micro/go-micro/v2/registry"
+	"github.com/micro/go-plugins/registry/consul/v2"
+	"github.com/micro/go-micro/v2/util/log"
+	"github.com/micro/go-micro/v2/web"
+	"github.com/micro/go-plugins/config/source/grpc/v2"
 	"github.com/opentracing/opentracing-go"
 )
 
@@ -33,8 +33,7 @@ func main() {
 	// 初始化配置
 	initCfg()
 
-	// 使用 Etcd 注册
-	micReg := etcd.NewRegistry(registryOptions)
+	micReg := consul.NewRegistry(registryOptions)
 
 	t, io, err := tracer.NewTracer(cfg.Name, "")
 	if err != nil {
@@ -76,13 +75,13 @@ func main() {
 }
 
 func registryOptions(ops *registry.Options) {
-	etcdCfg := &common.Etcd{}
-	err := config.C().App("etcd", etcdCfg)
+	consulCfg := &common.Etcd{}
+	err := config.C().App("consul", consulCfg)
 	if err != nil {
 		panic(err)
 	}
 
-	ops.Addrs = []string{fmt.Sprintf("%s:%d", etcdCfg.Host, etcdCfg.Port)}
+	ops.Addrs = []string{fmt.Sprintf("%s:%d", consulCfg.Host, consulCfg.Port)}
 }
 
 func initCfg() {

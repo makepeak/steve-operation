@@ -1,47 +1,119 @@
 package main
 
 import (
-        log "github.com/micro/go-micro/v2/logger"
+	"fmt"
+	"net"
 	"net/http"
-        "github.com/micro/go-micro/v2/web"
-        "github.com/makepeak/steve-operation/user-web/handler"
+	"time"
 
+	"github.com/afex/hystrix-go/hystrix"
+	"github.com/makepeak/steve-operation/basic"
+	"github.com/makepeak/steve-operation/basic/common"
+	"github.com/makepeak/steve-operation/basic/config"
+	"github.com/makepeak/steve-operation/plugins/breaker"
+	tracer "github.com/makepeak/steve-operation/plugins/tracer/jaeger"
+	"github.com/makepeak/steve-operation/plugins/tracer/opentracing/std2micro"
+	"github.com/makepeak/steve-operation/user-web/handler"
+	"github.com/micro/cli/v2"
 	"github.com/micro/go-micro/v2/registry"
-        "github.com/micro/go-plugins/registry/consul/v2"
+	"github.com/micro/go-plugins/registry/consul/v2"
+	"github.com/micro/go-micro/v2/util/log"
+	"github.com/micro/go-micro/v2/web"
+	"github.com/micro/go-plugins/config/source/grpc/v2"
+	"github.com/opentracing/opentracing-go"
+	"os"
 )
 
-var consulReg registry.Registry
+var (
+	appName = "user_web"
+	cfg     = &userCfg{}
+)
 
-func init(){
-    //新建一个consul注册的地址，也就是我们consul服务启动的机器ip+端口
-    consulReg = consul.NewRegistry(
-        registry.Addrs("127.0.0.1:8500"),
-    )
+type userCfg struct {
+	common.AppCfg
 }
-
 
 func main() {
-	// create new web service
-        service := web.NewService(
-                web.Name("steve.user.web.user"),
-                web.Version("latest"),
-		web.Address("0.0.0.0:9090"),
-		web.Registry(consulReg),
-        )
+	// 初始化配置
+	initCfg()
 
-	// initialise service
-        if err := service.Init(); err != nil {
-                log.Fatal(err)
-        }
+	// 使用 Consul 注册
+	micReg := consul.NewRegistry(registryOptions)
 
-	// register html handler
-	service.Handle("/", http.FileServer(http.Dir("html")))
+	t, io, err := tracer.NewTracer(cfg.Name, "")
+	if err != nil {
+		log.Fatal(err)
+	}
+	defer io.Close()
+	opentracing.SetGlobalTracer(t)
 
-	// register call handler
-	service.HandleFunc("/user/call", handler.Login)
+	// 创建新服务
+	service := web.NewService(
+		web.Name(cfg.Name),
+		web.Version(cfg.Version),
+		web.RegisterTTL(time.Second*15),
+		web.RegisterInterval(time.Second*10),
+		web.Registry(micReg),
+		web.Address(cfg.Addr()),
+	)
 
-	// run service
-        if err := service.Run(); err != nil {
-                log.Fatal(err)
-        }
+	// 初始化服务
+	if err := service.Init(
+		web.Action(
+			func(c *cli.Context) {
+				// 初始化handler
+				handler.Init()
+			}),
+	); err != nil {
+		log.Fatal(err)
+	}
+
+	//设置采样率
+	std2micro.SetSamplingFrequency(50)
+	// 注册登录接口
+	handlerLogin := http.HandlerFunc(handler.Login)
+	service.Handle("/user/login", std2micro.TracerWrapper(breaker.BreakerWrapper(handlerLogin)))
+	// 注册退出接口
+	service.Handle("/user/logout", std2micro.TracerWrapper(http.HandlerFunc(handler.Logout)))
+	service.Handle("/user/test", std2micro.TracerWrapper(http.HandlerFunc(handler.TestSession)))
+
+	hystrixStreamHandler := hystrix.NewStreamHandler()
+	hystrixStreamHandler.Start()
+	go http.ListenAndServe(net.JoinHostPort("", "81"), hystrixStreamHandler)
+
+	// 运行服务
+	if err := service.Run(); err != nil {
+		log.Fatal(err)
+	}
 }
+
+
+func registryOptions(ops *registry.Options) {
+	consulCfg := &common.Consul{}
+	err := config.C().App("consul", consulCfg)
+	if err != nil {
+		panic(err)
+	}
+
+	ops.Addrs = []string{fmt.Sprintf("%s:%d", consulCfg.Host, consulCfg.Port)}
+}
+
+func initCfg() {
+	configAddr := os.Getenv("MICRO_BOOK_CONFIG_GRPC_ADDR")
+	source := grpc.NewSource(
+		grpc.WithAddress(configAddr),
+		grpc.WithPath("micro"),
+	)
+
+	basic.Init(config.WithSource(source))
+
+	err := config.C().App(appName, cfg)
+	if err != nil {
+		panic(err)
+	}
+
+	log.Logf("[initCfg] 配置，cfg：%v", cfg)
+
+	return
+}
+

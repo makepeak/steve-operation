@@ -12,9 +12,9 @@ import (
 	invS "github.com/makepeak/steve-operation/inventory-service/proto/inventory"
 	orders "github.com/makepeak/steve-operation/orders-service/proto/orders"
 	"github.com/makepeak/steve-operation/plugins/session"
-	"github.com/micro/go-micro/client"
-	"github.com/micro/go-micro/util/log"
-	"github.com/micro/go-plugins/wrapper/breaker/hystrix"
+	"github.com/micro/go-micro/v2/client"
+	"github.com/micro/go-micro/v2/util/log"
+	"github.com/micro/go-plugins/wrapper/breaker/hystrix/v2"
 )
 
 var (

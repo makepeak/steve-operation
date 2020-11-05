@@ -1,9 +1,9 @@
 package user
 
 import (
-	"github.com/makepeak/steve-operation/basic/db"
+	"github.com/makepeak/steve-operation/plugins/db"
 	proto "github.com/makepeak/steve-operation/user-service/proto/user"
-	log "github.com/micro/go-micro/v2/logger"
+	"github.com/micro/go-micro/v2/util/log"
 )
 
 func (s *service) QueryUserByName(userName string) (ret *proto.User, err error) {

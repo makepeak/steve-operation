@@ -6,7 +6,7 @@ import (
 
 	"github.com/google/uuid"
 	proto "github.com/makepeak/steve-operation/payment-service/proto/payment"
-	"github.com/micro/go-micro/util/log"
+	"github.com/micro/go-micro/v2/util/log"
 )
 
 // sendPayDoneEvt 发送支付事件

@@ -3,7 +3,7 @@ package orders
 import (
 	proto "github.com/makepeak/steve-operation/orders-service/proto/orders"
 	"github.com/makepeak/steve-operation/plugins/db"
-	"github.com/micro/go-micro/util/log"
+	"github.com/micro/go-micro/v2/util/log"
 )
 
 // GetOrder 获取订单

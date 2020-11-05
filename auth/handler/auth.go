@@ -67,7 +67,7 @@ func (s *Service) DelUserAccessToken(ctx context.Context, req *auth.Request, rsp
 func (s *Service) GetCachedAccessToken(ctx context.Context, req *auth.Request, rsp *auth.Response) error {
 	log.Logf("[GetCachedAccessToken] 获取缓存的token，%d", req.UserId)
 	token, err := accessService.GetCachedAccessToken(&access.Subject{
-		ID: strconv.FormatInt(req.UserId, 10),
+		ID: strconv.FormatInt(int64(req.UserId), 10),
 	})
 	if err != nil {
 		rsp.Error = &auth.Error{

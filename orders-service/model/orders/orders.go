@@ -4,7 +4,7 @@ import (
 	"fmt"
 	invS "github.com/makepeak/steve-operation/inventory-service/proto/inventory"
 	proto "github.com/makepeak/steve-operation/orders-service/proto/orders"
-	"github.com/micro/go-micro/client"
+	"github.com/micro/go-micro/v2/client"
 	"sync"
 )
 

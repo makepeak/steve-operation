@@ -3,21 +3,21 @@ package main
 import (
 	"fmt"
 
-	// "github.com/makepeak/steve-operation/auth/handler"
-	// "github.com/makepeak/steve-operation/auth/model"
-	// s "github.com/makepeak/steve-operation/auth/proto/auth"
+	"github.com/makepeak/steve-operation/auth/handler"
+	"github.com/makepeak/steve-operation/auth/model"
+	s "github.com/makepeak/steve-operation/auth/proto/auth"
 	"github.com/makepeak/steve-operation/basic"
 	"github.com/makepeak/steve-operation/basic/common"
 	"github.com/makepeak/steve-operation/basic/config"
 	tracer "github.com/makepeak/steve-operation/plugins/tracer/jaeger"
-	"github.com/micro/cli"
+	"github.com/micro/cli/v2"
 	"github.com/micro/go-micro/v2"
 	"github.com/micro/go-micro/v2/registry"
 	//"github.com/micro/go-micro/v2/registry/consul"
 	"github.com/micro/go-plugins/registry/consul/v2"
 	"github.com/micro/go-micro/v2/util/log"
-	"github.com/micro/go-plugins/config/source/grpc"
-	openTrace "github.com/micro/go-plugins/wrapper/trace/opentracing"
+	"github.com/micro/go-plugins/config/source/grpc/v2"
+	openTrace "github.com/micro/go-plugins/wrapper/trace/opentracing/v2"
 	"github.com/opentracing/opentracing-go"
 	"os"
 )
@@ -56,12 +56,19 @@ func main() {
 
 	// 服务初始化
 	service.Init(
-		micro.Action(func(c *cli.Context) {
+		micro.Action(func(c *cli.Context)  error{
 			// 初始化handler
 			model.Init()
 			// 初始化handler
 			handler.Init()
+			return nil
 		}),
+		/*
+		// Loads CLI configuration
+                micro.Action(func(c *cli.Context) error {
+                        return nil
+                }),
+		*/
 	)
 
 	// 注册服务
@@ -81,7 +88,7 @@ func registryOptions(ops *registry.Options) {
 		panic(err)
 	}
 
-	ops.Addrs = []string{fmt.Sprintf("%s:%d", conuslCfg.Hos, consulCfg.Port)}
+	ops.Addrs = []string{fmt.Sprintf("%s:%d", consulCfg.Host, consulCfg.Port)}
 }
 
 func initCfg() {

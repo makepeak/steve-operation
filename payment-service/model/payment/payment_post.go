@@ -8,7 +8,7 @@ import (
 	invS "github.com/makepeak/steve-operation/inventory-service/proto/inventory"
 	ordS "github.com/makepeak/steve-operation/orders-service/proto/orders"
 	"github.com/makepeak/steve-operation/plugins/db"
-	"github.com/micro/go-micro/util/log"
+	"github.com/micro/go-micro/v2/util/log"
 )
 
 // PayOrder 支付订单

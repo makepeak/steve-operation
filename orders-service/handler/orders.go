@@ -5,7 +5,7 @@ import (
 
 	"github.com/makepeak/steve-operation/orders-service/model/orders"
 	proto "github.com/makepeak/steve-operation/orders-service/proto/orders"
-	"github.com/micro/go-micro/util/log"
+	"github.com/micro/go-micro/v2/util/log"
 )
 
 var (

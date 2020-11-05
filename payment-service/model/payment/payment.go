@@ -7,8 +7,8 @@ import (
 	"github.com/makepeak/steve-operation/basic/common"
 	invS "github.com/makepeak/steve-operation/inventory-service/proto/inventory"
 	ordS "github.com/makepeak/steve-operation/orders-service/proto/orders"
-	"github.com/micro/go-micro"
-	"github.com/micro/go-micro/client"
+	"github.com/micro/go-micro/v2"
+	"github.com/micro/go-micro/v2/client"
 )
 
 var (

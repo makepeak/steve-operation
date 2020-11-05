@@ -15,8 +15,8 @@ import (
 	"github.com/micro/cli"
 	"github.com/micro/go-micro"
 	"github.com/micro/go-micro/registry"
-	"github.com/micro/go-micro/registry/etcd"
 	"github.com/micro/go-micro/util/log"
+	"github.com/micro/go-plugins/registry/consul/v2"
 	"github.com/micro/go-plugins/config/source/grpc"
 	openTrace "github.com/micro/go-plugins/wrapper/trace/opentracing"
 	"github.com/opentracing/opentracing-go"
@@ -35,8 +35,7 @@ func main() {
 	// 初始化配置、数据库等信息
 	initCfg()
 
-	// 使用 Etcd 注册
-	micReg := etcd.NewRegistry(registryOptions)
+	micReg := consul.NewRegistry(registryOptions)
 
 	t, io, err := tracer.NewTracer(cfg.Name, "")
 	if err != nil {
@@ -74,7 +73,7 @@ func main() {
 }
 
 func registryOptions(ops *registry.Options) {
-	etcdCfg := &common.Consul{}
+	consulCfg := &common.Consul{}
 	err := config.C().App("consul", consulCfg)
 	if err != nil {
 		panic(err)
