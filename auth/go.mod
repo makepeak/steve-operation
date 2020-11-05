@@ -13,7 +13,7 @@ require (
 	github.com/hashicorp/go-rootcerts v1.0.1 // indirect
 	github.com/hashicorp/go-sockaddr v1.0.2 // indirect
 	github.com/hashicorp/memberlist v0.1.5 // indirect
-	github.com/makepeak/steve-operation v0.0.7
+	github.com/makepeak/steve-operation v0.0.8
 	github.com/micro/cli/v2 v2.1.2
 	github.com/micro/go-micro v1.18.0 // indirect
 	github.com/micro/go-micro/v2 v2.9.1
@@ -26,5 +26,5 @@ require (
 	github.com/uber/jaeger-client-go v2.25.0+incompatible // indirect
 	github.com/uber/jaeger-lib v2.4.0+incompatible // indirect
 	google.golang.org/protobuf v1.25.0
-	
+
 )

@@ -12,13 +12,13 @@ import (
 	"github.com/makepeak/steve-operation/inventory-service/model"
 	proto "github.com/makepeak/steve-operation/inventory-service/proto/inventory"
 	tracer "github.com/makepeak/steve-operation/plugins/tracer/jaeger"
-	"github.com/micro/cli"
-	"github.com/micro/go-micro"
-	"github.com/micro/go-micro/registry"
-	"github.com/micro/go-micro/util/log"
+	"github.com/micro/cli/v2"
+	"github.com/micro/go-micro/v2"
+	"github.com/micro/go-micro/v2/registry"
+	"github.com/micro/go-micro/v2/util/log"
 	"github.com/micro/go-plugins/registry/consul/v2"
-	"github.com/micro/go-plugins/config/source/grpc"
-	openTrace "github.com/micro/go-plugins/wrapper/trace/opentracing"
+	"github.com/micro/go-plugins/config/source/grpc/v2"
+	openTrace "github.com/micro/go-plugins/wrapper/trace/opentracing/v2"
 	"github.com/opentracing/opentracing-go"
 )
 
@@ -55,11 +55,12 @@ func main() {
 
 	// 服务初始化
 	service.Init(
-		micro.Action(func(c *cli.Context) {
+		micro.Action(func(c *cli.Context) error {
 			// 初始化模型层
 			model.Init()
 			// 初始化handler
 			handler.Init()
+			return nil
 		}),
 	)
 

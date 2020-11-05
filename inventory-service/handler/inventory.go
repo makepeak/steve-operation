@@ -2,7 +2,7 @@ package handler
 
 import (
 	"context"
-	"github.com/micro/go-micro/util/log"
+	"github.com/micro/go-micro/v2/util/log"
 
 	inv "github.com/makepeak/steve-operation/inventory-service/model/inventory"
 	proto "github.com/makepeak/steve-operation/inventory-service/proto/inventory"
