@@ -7,15 +7,20 @@ go 1.13
 replace google.golang.org/grpc => google.golang.org/grpc v1.26.0
 
 require (
+	github.com/afex/hystrix-go v0.0.0-20180502004556-fa1af6a1f4f5
 	github.com/gorilla/sessions v1.2.1 // indirect
-	github.com/makepeak/steve-operation v0.0.7
+	github.com/makepeak/steve-operation v0.0.8
 	github.com/makepeak/steve-operation/auth v0.0.0-20201103125854-3ede5d4e3464
-	github.com/makepeak/steve-operation/payment-service v0.0.0-20201103125854-3ede5d4e3464
+	github.com/makepeak/steve-operation/inventory-service v0.0.0-20201105111000-8ae034b491b2 // indirect
+	github.com/makepeak/steve-operation/orders-service v0.0.0-20201105111000-8ae034b491b2 // indirect
+	github.com/makepeak/steve-operation/payment-service v0.0.0-20201105111000-8ae034b491b2
 	github.com/micro/cli v0.2.0
+	github.com/micro/cli/v2 v2.1.2
 	github.com/micro/go-micro v1.18.0 // indirect
 	github.com/micro/go-micro/v2 v2.9.1
 	github.com/micro/go-plugins v1.5.1 // indirect
 	github.com/micro/go-plugins/config/source/grpc/v2 v2.9.1
 	github.com/micro/go-plugins/registry/consul/v2 v2.9.1
+	github.com/micro/go-plugins/wrapper/breaker/hystrix/v2 v2.9.1
 	github.com/opentracing/opentracing-go v1.2.0
 )

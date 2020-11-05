@@ -346,6 +346,8 @@ github.com/google/subcommands v1.0.1/go.mod h1:ZjhPrFU+Olkh9WazFPsl27BQ4UPiG37m3
 github.com/google/uuid v1.0.0/go.mod h1:TIyPZe4MgqvfeYDBFedMoGGpEw/LqOeaOT+nhxU+yHo=
 github.com/google/uuid v1.1.1 h1:Gkbcsh/GbpXz7lPftLA3P6TYMwjCLYm83jiFQZF/3gY=
 github.com/google/uuid v1.1.1/go.mod h1:TIyPZe4MgqvfeYDBFedMoGGpEw/LqOeaOT+nhxU+yHo=
+github.com/google/uuid v1.1.2 h1:EVhdT+1Kseyi1/pUmXKaFxYsDNy9RQYkMWRH68J/W7Y=
+github.com/google/uuid v1.1.2/go.mod h1:TIyPZe4MgqvfeYDBFedMoGGpEw/LqOeaOT+nhxU+yHo=
 github.com/google/wire v0.3.0/go.mod h1:i1DMg/Lu8Sz5yYl25iOdmc5CT5qusaa+zmRWs16741s=
 github.com/googleapis/gax-go v2.0.2+incompatible/go.mod h1:SFVmujtThgffbyetf+mdk2eWhX2bMyUtNHzFKcPA9HY=
 github.com/googleapis/gax-go/v2 v2.0.4/go.mod h1:0Wqv26UfaUD9n4G6kQubkQ+KchISgw+vpHVxEJEs9eg=
@@ -499,7 +501,15 @@ github.com/mailru/easyjson v0.0.0-20180730094502-03f2033d19d5/go.mod h1:C1wdFJiN
 github.com/makepeak/steve-operation v0.0.7 h1:5YddICquStNmFOODfvFqqHgUZNmtcM7UTCLM3JQzmPY=
 github.com/makepeak/steve-operation v0.0.7/go.mod h1:axXa0rAQ66Sv/5wjPvOQMpamYhNqsgayLHq4iLS+UAA=
 github.com/makepeak/steve-operation v0.0.8 h1:rUh6sSsXwPcDkPd1aZBgmduLBpRjI/elACipDUfPeC0=
+github.com/makepeak/steve-operation v0.0.8/go.mod h1:axXa0rAQ66Sv/5wjPvOQMpamYhNqsgayLHq4iLS+UAA=
+github.com/makepeak/steve-operation v0.0.9 h1:CKRuYPnaVu7SGcbAchA7B57sjSwzAOfz2qeKw0sRbZw=
+github.com/makepeak/steve-operation v0.0.9/go.mod h1:axXa0rAQ66Sv/5wjPvOQMpamYhNqsgayLHq4iLS+UAA=
+github.com/makepeak/steve-operation/inventory-service v0.0.0-20201105111000-8ae034b491b2 h1:qW0bW0Vzm/UjijQXlLR8hLeN4TAmvsd1M4lQmX6n8Dg=
+github.com/makepeak/steve-operation/inventory-service v0.0.0-20201105111000-8ae034b491b2/go.mod h1:bDQ+Indpd26Rj4LnXaZ5yTr2Mp18hhcDgE1e++8gQZw=
 github.com/makepeak/steve-operation/payment-service v0.0.0-20201103125854-3ede5d4e3464 h1:MC5rq6LpTT6OWFhHqtmJcJOfmGzWHlSR0t/cE2VVq/I=
+github.com/makepeak/steve-operation/payment-service v0.0.0-20201105101858-2f9b653b4c08 h1:xx0b+jdd0lSVIJkaT2OI+quSVKMwZ8eaGFEGaSu6ezA=
+github.com/makepeak/steve-operation/payment-service v0.0.0-20201105111000-8ae034b491b2 h1:h5QQlbPcVUNfbXhgD6K7ASNIYisAGaFixV94x7EAM4g=
+github.com/makepeak/steve-operation/payment-service v0.0.0-20201105111000-8ae034b491b2/go.mod h1:dUjSwUS0oSZdn5OyQ0Pleb7gAS0r9jhnfw7NJAJwgRA=
 github.com/maratori/testpackage v1.0.1/go.mod h1:ddKdw+XG0Phzhx8BFDTKgpWP4i7MpApTE5fXSKAqwDU=
 github.com/marten-seemann/chacha20 v0.2.0/go.mod h1:HSdjFau7GzYRj+ahFNwsO3ouVJr1HFkWoEwNDb4TMtE=
 github.com/marten-seemann/qpack v0.1.0/go.mod h1:LFt1NU/Ptjip0C2CPkhimBz5CGE3WGDAUWqna+CNTrI=

@@ -2,7 +2,6 @@ package main
 
 import (
 	"fmt"
-	"os"
 	"time"
 
 	"github.com/makepeak/steve-operation/basic"
@@ -58,13 +57,14 @@ func main() {
 
 	// 服务初始化
 	service.Init(
-		micro.Action(func(c *cli.Context) {
+		micro.Action(func(c *cli.Context) error{
 			// 初始化模型层
 			model.Init()
 			// 初始化handler
 			handler.Init()
 			// 初始化sub
 			subscriber.Init()
+			return nil
 		}),
 	)
 
@@ -97,9 +97,8 @@ func registryOptions(ops *registry.Options) {
 }
 
 func initCfg() {
-	configAddr := os.Getenv("MICRO_BOOK_CONFIG_GRPC_ADDR")
 	source := grpc.NewSource(
-		grpc.WithAddress(configAddr),
+		grpc.WithAddress("127.0.0.1:9600"),
 		grpc.WithPath("micro"),
 	)
 

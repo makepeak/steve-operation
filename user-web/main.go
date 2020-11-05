@@ -21,7 +21,6 @@ import (
 	"github.com/micro/go-micro/v2/web"
 	"github.com/micro/go-plugins/config/source/grpc/v2"
 	"github.com/opentracing/opentracing-go"
-	"os"
 )
 
 var (
@@ -99,9 +98,8 @@ func registryOptions(ops *registry.Options) {
 }
 
 func initCfg() {
-	configAddr := os.Getenv("MICRO_BOOK_CONFIG_GRPC_ADDR")
 	source := grpc.NewSource(
-		grpc.WithAddress(configAddr),
+		grpc.WithAddress("127.0.0.1:9600"),
 		grpc.WithPath("micro"),
 	)
 

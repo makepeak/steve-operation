@@ -10,7 +10,9 @@ require (
 	github.com/HdrHistogram/hdrhistogram-go v1.0.0 // indirect
 	github.com/go-sql-driver/mysql v1.5.0
 	github.com/golang/protobuf v1.4.2
-	github.com/makepeak/steve-operation v0.0.7
+	github.com/makepeak/steve-operation v0.0.9
+	github.com/makepeak/steve-operation/inventory-service v0.0.0-20201105111000-8ae034b491b2
+	github.com/makepeak/steve-operation/payment-service v0.0.0-20201105111000-8ae034b491b2
 	github.com/micro/cli v0.2.0
 	github.com/micro/cli/v2 v2.1.2
 	github.com/micro/go-micro v1.18.0

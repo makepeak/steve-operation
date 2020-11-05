@@ -8,10 +8,10 @@ import (
 	"github.com/makepeak/steve-operation/basic"
 	"github.com/makepeak/steve-operation/basic/common"
 	"github.com/makepeak/steve-operation/basic/config"
-	"github.com/makepeak/steve-operation/payment-service/handler"
+	"github.com/makepeak/steve-operation/payment-web/handler"
 	tracer "github.com/makepeak/steve-operation/plugins/tracer/jaeger"
 	"github.com/makepeak/steve-operation/plugins/tracer/opentracing/std2micro"
-	"github.com/micro/cli"
+	"github.com/micro/cli/v2"
 	"github.com/micro/go-micro/v2/registry"
 	"github.com/micro/go-plugins/registry/consul/v2"
 	"github.com/micro/go-micro/v2/util/log"
@@ -54,7 +54,7 @@ func main() {
 	// 初始化服务
 	if err := service.Init(
 		web.Action(
-			func(c *cli.Context) {
+			func(c *cli.Context)  {
 				// 初始化handler
 				handler.Init()
 			}),
@@ -75,7 +75,7 @@ func main() {
 }
 
 func registryOptions(ops *registry.Options) {
-	consulCfg := &common.Etcd{}
+	consulCfg := &common.Consul{}
 	err := config.C().App("consul", consulCfg)
 	if err != nil {
 		panic(err)
@@ -97,7 +97,7 @@ func initCfg() {
 		panic(err)
 	}
 
-	log.Logf("[initCfg] 配置，cfg：%v", cfg)
+	log.Logf("[initCfg] 配置，cfg：%v", *cfg)
 
 	return
 }

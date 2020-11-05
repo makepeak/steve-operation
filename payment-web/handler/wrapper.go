@@ -31,7 +31,7 @@ func AuthWrapper(h http.Handler) http.Handler {
 				userId := sess.Values["userId"].(int64)
 				if userId != 0 {
 					rsp, err := authClient.GetCachedAccessToken(context.TODO(), &auth.Request{
-						UserId: userId,
+						UserId: uint64(userId),
 					})
 					if err != nil {
 						log.Logf("[AuthWrapper]，err：%s", err)
@@ -59,3 +59,4 @@ func AuthWrapper(h http.Handler) http.Handler {
 		h.ServeHTTP(w, r)
 	})
 }
+

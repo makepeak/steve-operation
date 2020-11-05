@@ -25,12 +25,11 @@ import (
 	"github.com/micro/go-plugins/config/source/grpc/v2"
 	openTrace "github.com/micro/go-plugins/wrapper/trace/opentracing/v2"
 	"github.com/opentracing/opentracing-go"
-	"os"
 )
 
 
 var (
-	appName = "user_service"
+	appName = "user_srv"
 	cfg     = &userCfg{}
 )
 
@@ -46,8 +45,7 @@ func main() {
 	// 使用consul注册
 	micReg := consul.NewRegistry(registryOptions)
 
-	traceAddr := os.Getenv("MICRO_BOOK_TRACER_ADDR")
-	t, io, err := tracer.NewTracer(cfg.Name, traceAddr)
+	t, io, err := tracer.NewTracer(cfg.Name, "127.0.0.1:6831")
 	if err != nil {
 		log.Fatal(err)
 	}
@@ -98,9 +96,8 @@ func registryOptions(ops *registry.Options) {
 }
 
 func initCfg() {
-	configAddr := os.Getenv("MICRO_BOOK_CONFIG_GRPC_ADDR")
 	source := grpc.NewSource(
-		grpc.WithAddress(configAddr),
+		grpc.WithAddress("127.0.0.1:9600"),
 		grpc.WithPath("micro"),
 	)
 
@@ -111,7 +108,7 @@ func initCfg() {
 		panic(err)
 	}
 
-	log.Logf("[initCfg] 配置，cfg：%v", cfg)
+	log.Logf("[initCfg] 配置，cfg：%v", *cfg)
 
 	return
 }

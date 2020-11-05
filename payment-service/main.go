@@ -57,11 +57,12 @@ func main() {
 
 	// 服务初始化
 	service.Init(
-		micro.Action(func(c *cli.Context) {
+		micro.Action(func(c *cli.Context) error {
 			// 初始化模型层
 			model.Init()
 			// 初始化handler
 			handler.Init()
+			return nil
 		}),
 	)
 

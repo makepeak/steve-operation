@@ -65,6 +65,7 @@ github.com/Shopify/sarama v1.24.1/go.mod h1:fGP8eQ6PugKEI0iUETYYtnP6d1pH/bdDMTel
 github.com/Shopify/toxiproxy v2.1.4+incompatible/go.mod h1:OXgGpZ6Cli1/URJOF1DMxUHB2q5Ap20/P/eIdh4G0pI=
 github.com/StackExchange/wmi v0.0.0-20180116203802-5d049714c4a6/go.mod h1:3eOhrUMpNV+6aFIbp5/iudMxNCF27Vw2OZgy4xEx0Fg=
 github.com/abbot/go-http-auth v0.4.1-0.20181019201920-860ed7f246ff/go.mod h1:Cz6ARTIzApMJDzh5bRMSUou6UMSp0IEXg9km/ci7TJM=
+github.com/afex/hystrix-go v0.0.0-20180502004556-fa1af6a1f4f5 h1:rFw4nCn9iMW+Vajsk51NtYIcwSTkXr+JGrMd36kTDJw=
 github.com/afex/hystrix-go v0.0.0-20180502004556-fa1af6a1f4f5/go.mod h1:SkGFH1ia65gfNATL8TAiHDNxPzPdmEL5uirI2Uyuz6c=
 github.com/akamai/AkamaiOPEN-edgegrid-golang v0.9.0/go.mod h1:zpDJeKyp9ScW4NNrbdr+Eyxvry3ilGPewKoXw3XGN1k=
 github.com/alangpierce/go-forceexport v0.0.0-20160317203124-8f1d6941cd75 h1:3ILjVyslFbc4jl1w5TWuvvslFD/nDfR2H8tVaMVLrEY=
@@ -269,6 +270,7 @@ github.com/go-redis/redis v6.15.9+incompatible/go.mod h1:NAIEuMOZ/fxfXJIrKDQDz8w
 github.com/go-redsync/redsync v1.3.1/go.mod h1:qxZwM5JOimfq8y98Wk2+c8dKtxJgG5/yIl2ODz2E5Dk=
 github.com/go-sql-driver/mysql v1.4.0/go.mod h1:zAC/RDZ24gD3HViQzih4MyKcchzm+sOG5ZlKdlhCg5w=
 github.com/go-sql-driver/mysql v1.4.1/go.mod h1:zAC/RDZ24gD3HViQzih4MyKcchzm+sOG5ZlKdlhCg5w=
+github.com/go-sql-driver/mysql v1.5.0/go.mod h1:DCzpHaOWr8IXmIStZouvnhqoel9Qv2LBy8hT2VhHyBg=
 github.com/go-stack/stack v1.8.0/go.mod h1:v0f6uXyyMGvRgIKkXu+yp6POWl0qKG85gN/melR3HDY=
 github.com/go-stomp/stomp v2.0.3+incompatible/go.mod h1:VqCtqNZv1226A1/79yh+rMiFUcfY3R109np+7ke4n0c=
 github.com/go-telegram-bot-api/telegram-bot-api v4.6.4+incompatible/go.mod h1:qf9acutJ8cwBUhm1bqgz6Bei9/C/c93FPDljKWwsOgM=
@@ -368,6 +370,8 @@ github.com/google/subcommands v1.0.1/go.mod h1:ZjhPrFU+Olkh9WazFPsl27BQ4UPiG37m3
 github.com/google/uuid v1.0.0/go.mod h1:TIyPZe4MgqvfeYDBFedMoGGpEw/LqOeaOT+nhxU+yHo=
 github.com/google/uuid v1.1.1 h1:Gkbcsh/GbpXz7lPftLA3P6TYMwjCLYm83jiFQZF/3gY=
 github.com/google/uuid v1.1.1/go.mod h1:TIyPZe4MgqvfeYDBFedMoGGpEw/LqOeaOT+nhxU+yHo=
+github.com/google/uuid v1.1.2 h1:EVhdT+1Kseyi1/pUmXKaFxYsDNy9RQYkMWRH68J/W7Y=
+github.com/google/uuid v1.1.2/go.mod h1:TIyPZe4MgqvfeYDBFedMoGGpEw/LqOeaOT+nhxU+yHo=
 github.com/google/wire v0.3.0/go.mod h1:i1DMg/Lu8Sz5yYl25iOdmc5CT5qusaa+zmRWs16741s=
 github.com/googleapis/gax-go v2.0.2+incompatible/go.mod h1:SFVmujtThgffbyetf+mdk2eWhX2bMyUtNHzFKcPA9HY=
 github.com/googleapis/gax-go/v2 v2.0.4/go.mod h1:0Wqv26UfaUD9n4G6kQubkQ+KchISgw+vpHVxEJEs9eg=
@@ -542,11 +546,20 @@ github.com/mailru/easyjson v0.0.0-20180730094502-03f2033d19d5/go.mod h1:C1wdFJiN
 github.com/makepeak/steve-operation v0.0.6/go.mod h1:axXa0rAQ66Sv/5wjPvOQMpamYhNqsgayLHq4iLS+UAA=
 github.com/makepeak/steve-operation v0.0.7 h1:5YddICquStNmFOODfvFqqHgUZNmtcM7UTCLM3JQzmPY=
 github.com/makepeak/steve-operation v0.0.7/go.mod h1:axXa0rAQ66Sv/5wjPvOQMpamYhNqsgayLHq4iLS+UAA=
+github.com/makepeak/steve-operation v0.0.8 h1:rUh6sSsXwPcDkPd1aZBgmduLBpRjI/elACipDUfPeC0=
+github.com/makepeak/steve-operation v0.0.8/go.mod h1:axXa0rAQ66Sv/5wjPvOQMpamYhNqsgayLHq4iLS+UAA=
+github.com/makepeak/steve-operation v0.0.9 h1:CKRuYPnaVu7SGcbAchA7B57sjSwzAOfz2qeKw0sRbZw=
 github.com/makepeak/steve-operation/auth v0.0.0-20201103125854-3ede5d4e3464 h1:XKCv58VBQh7B6W+0cc0AgRreyes3Smeylg7mIdMYJjQ=
 github.com/makepeak/steve-operation/auth v0.0.0-20201103125854-3ede5d4e3464/go.mod h1:LwPpZHw1VY20oe4C+U9aW28dO/LClM4aEplHhiXTjz4=
+github.com/makepeak/steve-operation/inventory-service v0.0.0-20201105111000-8ae034b491b2 h1:qW0bW0Vzm/UjijQXlLR8hLeN4TAmvsd1M4lQmX6n8Dg=
+github.com/makepeak/steve-operation/inventory-service v0.0.0-20201105111000-8ae034b491b2/go.mod h1:bDQ+Indpd26Rj4LnXaZ5yTr2Mp18hhcDgE1e++8gQZw=
 github.com/makepeak/steve-operation/orders-service v0.0.0-20201103125854-3ede5d4e3464 h1:JqP69c3sTB4/0lRcwh8FFUfDSwMw2p1YKShGirY7ch0=
+github.com/makepeak/steve-operation/orders-service v0.0.0-20201105111000-8ae034b491b2 h1:UOYNOQMkPSgik6o/NU/MHubIAaxnG9apCLdgyjXCsBA=
+github.com/makepeak/steve-operation/orders-service v0.0.0-20201105111000-8ae034b491b2/go.mod h1:jJ7NbBoSHIF0d78lOlourO6TzhD7TqQnJldgyWfMMlI=
 github.com/makepeak/steve-operation/payment-service v0.0.0-20201103125854-3ede5d4e3464 h1:MC5rq6LpTT6OWFhHqtmJcJOfmGzWHlSR0t/cE2VVq/I=
 github.com/makepeak/steve-operation/payment-service v0.0.0-20201103125854-3ede5d4e3464/go.mod h1:l/HJ+uTnlQiVS88RKbsfiZHz3rQOwiAwic0pb+l4cbg=
+github.com/makepeak/steve-operation/payment-service v0.0.0-20201105111000-8ae034b491b2 h1:h5QQlbPcVUNfbXhgD6K7ASNIYisAGaFixV94x7EAM4g=
+github.com/makepeak/steve-operation/payment-service v0.0.0-20201105111000-8ae034b491b2/go.mod h1:dUjSwUS0oSZdn5OyQ0Pleb7gAS0r9jhnfw7NJAJwgRA=
 github.com/maratori/testpackage v1.0.1/go.mod h1:ddKdw+XG0Phzhx8BFDTKgpWP4i7MpApTE5fXSKAqwDU=
 github.com/marten-seemann/chacha20 v0.2.0 h1:f40vqzzx+3GdOmzQoItkLX5WLvHgPgyYqFFIO5Gh4hQ=
 github.com/marten-seemann/chacha20 v0.2.0/go.mod h1:HSdjFau7GzYRj+ahFNwsO3ouVJr1HFkWoEwNDb4TMtE=
@@ -587,6 +600,9 @@ github.com/micro/go-plugins/config/source/grpc/v2 v2.9.1 h1:hSBSL5D0oFYDpe4f7eT0
 github.com/micro/go-plugins/config/source/grpc/v2 v2.9.1/go.mod h1:76r8DrlUZRwBLhJRP66jggwO7G1e+6G7RNq/hgL9YN4=
 github.com/micro/go-plugins/registry/consul/v2 v2.9.1 h1:3IRsR8B9rEsjY4UXvhlkItEi0F/48LBOGdF3J8qLPMY=
 github.com/micro/go-plugins/registry/consul/v2 v2.9.1/go.mod h1:k+12oSCZwN0lYcWeiJ2Y12FWLP02fwJEJk6+EV5n6Io=
+github.com/micro/go-plugins/wrapper/breaker/hystrix/v2 v2.9.1 h1:cwnuDUzibCHuuPm10pKOAsxUWCCC7SxWN/WNpUwHT0I=
+github.com/micro/go-plugins/wrapper/breaker/hystrix/v2 v2.9.1/go.mod h1:Ap49tgWCkin0OmUQWg9cjAelLxN9nawvHs0ptgkvU/0=
+github.com/micro/go-plugins/wrapper/trace/opentracing/v2 v2.9.1/go.mod h1:JyDIUQgJ0noSBbxW2cuNWVAxmKXF5VeTbJ8JY1S1160=
 github.com/micro/mdns v0.3.0 h1:bYycYe+98AXR3s8Nq5qvt6C573uFTDPIYzJemWON0QE=
 github.com/micro/mdns v0.3.0/go.mod h1:KJ0dW7KmicXU2BV++qkLlmHYcVv7/hHnbtguSWt9Aoc=
 github.com/micro/micro v1.16.0/go.mod h1:TO5Ng0KidbfRYIxVM4Q3deZ0A+qwRyP9WeXp+k2fWNA=

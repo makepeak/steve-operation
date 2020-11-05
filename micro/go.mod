@@ -1,4 +1,4 @@
-module github.com/makepeak/steve-operation/micro/v0.0.8
+module github.com/makepeak/steve-operation/micro-service
 
 go 1.15
 
